@@ -13,7 +13,10 @@ function Card(id, name) {
         description: this.name
     }, 'li')
 
-removeCard: function() {
+}
+
+Card.prototype = {
+    removeCard: function() {
     var self = this;
 
     fetch(baseUrl + '/card/' + self.id, {
@@ -27,6 +30,5 @@ removeCard: function() {
             self.element.parentNode.removeChild(this.element);
         })
 }
-
 }
 
