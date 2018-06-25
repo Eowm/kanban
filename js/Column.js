@@ -8,7 +8,7 @@ function Column(id, name) {
     this.id = id;
     this.name = name || 'No name given';
 
-    removeColumn: function() {
+removeColumn: function() {
   var self = this;
   fetch(baseUrl + '/column/' + self.id, { method: 'DELETE', headers: myHeaders })
     .then(function(resp) {
@@ -18,11 +18,9 @@ function Column(id, name) {
       self.element.parentNode.removeChild(self.element);
     });
 }
-}
 
 
-
-if (event.target.classList.contains('add-card')) {
+    if (event.target.classList.contains('add-card')) {
   var cardName = prompt("Enter the name of the card");
   event.preventDefault();
 
@@ -39,3 +37,7 @@ if (event.target.classList.contains('add-card')) {
 
   self.addCard(new Card(cardName));
 }
+}
+
+
+
