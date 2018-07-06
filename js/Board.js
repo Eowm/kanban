@@ -22,7 +22,7 @@ document.querySelector('#board .create-column').addEventListener('click', functi
     })
     .then(function(resp) {
       var column = new Column(resp.id, name);
-      board.addColumn(col);
+      board.addColumn(column);
     });
 });
 
