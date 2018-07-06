@@ -1,21 +1,10 @@
-function randomColorCard() {
-    var colorTable = '0123456789abcdef';
-    var colorTableLength = colorTable.length;
-    var randomColor = '';
-    for (var i = 0; i < 3; i++) {
-        for (var j = 0; j < 2; j++) {
-            randomColor += colorTable[Math.floor(Math.random() * colorTableLength)];
-        }
-    }
-    return randomColor;
-}
+
 
 function Card(id, name) {
     var self = this;
     this.id = id;
     this.name = name || 'No name given';
     this.element = generateTemplate('card-template', {description: this.name}, 'li');
-    this.element.querySelector('.card').style.backgroundColor = '#' + randomColorCard();
     this.element.querySelector('.card').addEventListener('click', function (event) {
         event.stopPropagation();
         if (event.target.classList.contains('btn-delete')) {
