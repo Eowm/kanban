@@ -6,9 +6,7 @@ var myHeaders = {
 };
 
 
-fetch(baseUrl + '/board', {
-        headers: myHeaders
-    })
+fetch(baseUrl + '/board', { headers: myHeaders })
     .then(function(resp) {
         return resp.json();
     })
@@ -27,10 +25,13 @@ function setupColumns(columns) {
 
 function setupCards(col, cards) {
     cards.forEach(function(card) {
-            var card = new Card(card.id, card.name);
-            col.addCard(card);
-        })
+            var cardObj = new Card(card.id, card.name);
+            col.addCard(cardObj);
+        });
     }
+  //   addCard: function(card) {
+  //  this.element.querySelector('ul').appendChild(card.element);
+ // }
 
 
 function generateTemplate(name, data, basicElement) {
